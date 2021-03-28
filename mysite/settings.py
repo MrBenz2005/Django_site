@@ -51,7 +51,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    #'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -130,6 +130,11 @@ USE_TZ = True
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/accounts/logout/'
+
+ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 1
+ACCOUNT_USERNAME_MIN_LENGTH = 4
+
+EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
 
 STATIC_URL = '/static/'
 

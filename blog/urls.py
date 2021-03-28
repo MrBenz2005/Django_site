@@ -7,5 +7,4 @@ from django.conf.urls import url
 urlpatterns = [
     path('', views.main, name='main'),
     path('accounts/', include('allauth.urls')),
- 
 ]
