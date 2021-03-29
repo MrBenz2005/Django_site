@@ -5,12 +5,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
         <title>My favorite blog</title>
+        {% load static %}
         <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
     </head>
     <body style="background: green">
         <div class="starter-template text-center py-5 px-3">
             <h1>Не рабочая ссылка</h1>
             <p class="lead"> здесь пока ведется работа </p>
+            <a href="{% url 'main' %}"> вернуться на главную</a>
         </div>
     </body>
 </html>
