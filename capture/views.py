@@ -16,4 +16,4 @@ def capture(request):
 
 	data = image.generate(vyvod)
 	capture_write = image.write(vyvod, 'captcha1.png')
-	return 	render(request, 'capture/choose_capture.html', {'vyvod': vyvod})
+	return 	render(request, 'capture/choose_capture.html', {'data': data})
