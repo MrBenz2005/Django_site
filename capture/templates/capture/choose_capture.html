@@ -1,12 +1,25 @@
 {% extends 'blog\index.html' %}
 
 {% block content %}
+{% load static %}
 
 <div>
     <h1>Капчи с цифрами</h1>
     <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
   </div>
-<img src="{{ img_captcha.url }}">
 
+<img class="img-property" src="{% static image_path %}">
+
+<form action=" " method="POST">
+	{% csrf_token %}
+	{{ form.as_p }}
+	<input type="Submit" name="submit" value="Submit"/>
+</form>
+
+{% if submitbutton == "Submit" %}
+	<h1>Your first name is {{ firstname }}</h1>
+	<h1>Your last name is {{ lastname }}</h1>
+	<h1>Your email is {{ emailvalue }}</h1>
+{% endif %}
 
 {% endblock %}
